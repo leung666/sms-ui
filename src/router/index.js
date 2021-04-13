@@ -11,7 +11,8 @@ const routerList = [];
 // 该函数用于将所有分区路由中的路由添加到路由数组
 function importAll(routerArr) {
   routerArr.keys().forEach(key => {
-    routerList.push(routerArr(key).default)
+    let _router = routerArr(key).default
+    Array.isArray(_router) ? routerList.push(..._router) : routerList.push(_router)
   })
 }
 importAll(require.context(".", true, /\.routes\.js/))

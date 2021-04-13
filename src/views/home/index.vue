@@ -2,6 +2,7 @@
   <div class="home">
     <p>{{title}}</p>
     <component-demo />
+    <calendar/>
   </div>
 </template>
 
